@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+   
+    <script>
+       /*
+            Создайте пустой массив letters
+        Создайте строку из нескольких слов, например "Backend As A Service"
+        Напилите код, который разбивает эту строку на массив слов
+        и пушит в массив letters первый символ каждого слова
+        Выведите результат в консоль
+        Объедините все элементы массива letters в одну строку и выведите ее в консоль
+       */
+        var letters = []
+        var str = 'Backend As A Servise'
+        var strArr = str.split(' ')
+        for(var i = 0; i < strArr.length; i++)
+            letters.push(strArr[i].charAt(0))
+        console.log(letters)
+        var lettersStr = letters.join(' | ')
+        console.log(lettersStr)
+
+        /*
+            Объявите функцию с одним формальным параметром, которая проверяет тип данных переданного аргумента и:
+        если это число, возвращает текущую дату в формате "20.02.2019, 13:21:51"
+        в противном случае возвращает строку "Неверный тип данных"
+        Вызовите функцию
+        */
+        
+        function checkType(arg){
+            var currentDate = new Date().toLocaleString()
+            return typeof arg === "number" ? currentDate : 'Не верный тип данных'
+        }
+
+        /*
+             Откройте Chrome DevTools
+         В панели навигации найдите файл index01.js ( в папке js/ )
+         Установите breakpoint на строке вызова функции insertUserText ( строка 10 )
+         Перезагрузите страницу
+         Теперь обратите внимание на функцию testUserText
+         Ваша задача: обезопасить свою страницу от внедрения вредоносного кода с помощью функции валидации testUserText
+         функция должна вывести на страницу текст пользователя безопасным способом
+         ( т.е. текст должен быть выведен "as is" ( как есть ), но код не должен быть выполнен )
+        */
+
+        function testUserText(userText)
+           return userText.replace('<', '&#60')
+
+    </script>
+</body>
+</html>
